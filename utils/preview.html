@@ -1,0 +1,86 @@
+<html>
+
+<body>
+    <style>
+        #preview {
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .email_frame {
+            margin-top: 10px;
+            border: 1px solid #aaa;
+            height: calc(100% - 50px);
+            width: 100%
+        }
+
+        .mr-5 {
+            margin-right: 25px;
+        }
+    </style>
+    <div id="preview">
+        <div>
+            Locale <select v-model="locale" class="mr-5">
+                <option v-for="option in available_locales">{{option}}</option>
+            </select>
+            Message <select v-model="message" class="mr-5">
+                <option v-for="option in available_messages">{{option}}</option>
+            </select>
+            Format <select v-model="format" class="mr-5">
+                <option v-for="option in available_formats">{{option}}</option>
+            </select>
+        </div>
+        <div>
+            <iframe id="preview_iframe" class="email_frame" :src="'/'+ locale + '/' + message + '/' + format "></iframe>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const httpClient = axios.create();
+        httpClient.defaults.timeout = 200;
+
+        new Vue({
+            el: '#preview',
+            data: {
+                available_locales: [],
+                available_messages: [],
+                available_formats: ["html", "txt"],
+                locale: "",
+                message: "",
+                format: "html",
+                seed: ""
+            },
+            methods: {
+                seedInterval: function () {
+                    var v = this;
+                    setInterval(function () {
+                        httpClient.get("/seed")
+                            .then(response => {
+                                v.seed = response.data.seed
+                            })
+                    }, 300);
+                }
+            },
+            watch: {
+                seed: function (newVal, oldVal) {
+                    var iframe = document.getElementById("preview_iframe")
+                    iframe.src = iframe.src;
+                }
+            },
+            mounted() {
+                httpClient.get("/preview_config")
+                    .then(response => {
+                        const preview_config = response.data
+                        this.available_locales = preview_config.available_locales
+                        this.available_messages = preview_config.available_messages
+                        this.locale = preview_config.available_locales[0]
+                        this.message = preview_config.available_messages[0]
+                    })
+                this.seedInterval()
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{{product_name}} - {{product_website}}
+================================================
+{% block body_content %}{% endblock %}
+================================================
+(c) {{copyright_year}} {{product_name}} - {{localized.all_rights_reserved}}
+{{company_name}}
+{{company_address_1}}
+{{company_address_2}}
+{{company_address_3}}

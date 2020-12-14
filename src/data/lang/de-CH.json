@@ -1,0 +1,23 @@
+{
+  "global": {
+    "greetings": "Viele Grüsse,",
+    "team_signature": "Dein {{product_name}} Team",
+    "all_rights_reserved": "Alle Rechte vorbehalten.",
+    "cta_manual_instructions": "Falls du Schwierigkeiten mit dem oben stehenden Link haben solltest, kopiere den untenstehenden Link und öffne ihn manuell in deinem Web-Browser."
+  },
+  "email_verification": {
+    "subject": "E-Mail-Adresse bestätigen",
+    "preheader": "Danke, dass du {{product_name}} verwendest. Um zu beginnen, bitte bestätige deine E-Mail-Adresse.",
+    "thank_you": "Danke, dass du {{product_name}} verwendest. Um zu beginnen, bitte bestätige deine E-Mail-Adresse.",
+    "cta_button_text": "Bestätige deine E-Mail-Adresse",
+    "contact_us_for_help": "Falls du Fragen zur Verifizierung deiner E-Mail-Adresse hast, bitte kontaktiere uns."
+  },
+  "password_reset": {
+    "subject": "Passwort zurücksetzen",
+    "preheader": "Du hast vor kurzem angefordert, das Passwort deines {{product_name}} Kontos zurückzusetzen. Klicke auf den untenstehenden Button, um dein Passwort zurückzusetzen. Diese Anfrage ist nur in den kommenden 24 Stunden gültig.",
+    "password_reset": "Du hast vor kurzem angefordert, das Passwort deines {{product_name}} Kontos zurückzusetzen. Klicke auf den untenstehenden Button, um dein Passwort zurückzusetzen. Diese Anfrage ist nur in den kommenden 24 Stunden gültig.",
+    "security_information": "Aus Sicherheitsgründen: Diese Anfrage wurde von einem {{variables.operating_system}} Gerät mit {{variables.browser_name}} ausgelöst. Falls du keine derartige Anfrage ausgelöst hast, bitte ignoriere diese E-Mail oder kontaktiere bei Fragen unseren Support.",
+    "cta_button_text": "Passwort zurücksetzen",
+    "contact_us_for_help": "Falls du Fragen zu deinem Account haben solltest, bitte zögere nicht, uns zu kontaktieren."
+  }
+}

@@ -1,0 +1,12 @@
+{% extends "layouts/base_plain.txt" %}
+{% block body_content %}
+{% block body_top %}{% endblock %}
+{{localized.cta_button_text}}
+{{variables.cta_url}}
+{% block body_bottom %}{% endblock %}
+{{localized.greetings}}
+{{localized.team_signature}}
+
+{{localized.cta_manual_instructions}}
+{{variables.cta_url}}
+{% endblock %}

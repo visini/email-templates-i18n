@@ -1,0 +1,10 @@
+{
+    "available_locales": [
+        "de-CH",
+        "en-US"
+    ],
+    "available_messages": [
+        "email_verification",
+        "password_reset"
+    ]
+}
